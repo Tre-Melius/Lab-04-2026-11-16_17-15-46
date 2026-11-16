@@ -44,4 +44,13 @@ public class PlayerController : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, min.y + padding, max.y - padding);
         transform.position = pos;
     }
+
+    void OnTriggerEnter2D(Collider2d other)
+    {
+        if(other.Compare.Tag("Coin"))
+        {
+            FindFirstObjectByType<ScoreManager>().AddScore(20);
+            Destroy(other.gameObject);
+        }
+    }
 }
