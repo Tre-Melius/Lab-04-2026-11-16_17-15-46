@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2753facfc6cc84a9d4de8af4d70ed0, type: 3}
   m_Name: EnemyWaves1
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWaves
-  MyEnemyWave: {fileID: 0}
+  MyEnemyWave: {fileID: 7060274414981110744, guid: 30f8e4799d5d32b429a9d11fc994be77, type: 3}
