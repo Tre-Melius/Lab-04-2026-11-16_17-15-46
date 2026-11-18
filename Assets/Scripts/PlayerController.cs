@@ -45,12 +45,25 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
     }
 
-    void OnTriggerEnter2D(Collider2d other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.Compare.Tag("Coin"))
+        if(other.CompareTag("Coin"))
         {
             FindFirstObjectByType<ScoreManager>().AddScore(20);
             Destroy(other.gameObject);
+        }
+        if(other.CompareTag("Special coin"))
+        {
+            FindFirstObjectByType<ScoreManager>().AddScore(60);
+            Destroy(other.gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("Enemy"))
+        {
+            FindFirstObjectByType<ScoreManager>().RemoveScore(1);
         }
     }
 }
